@@ -1,0 +1,7 @@
+#!/bin/bash
+
+count="$1"
+
+if (( count > 3 )); then
+	echo "count is greater than 3"
+fi

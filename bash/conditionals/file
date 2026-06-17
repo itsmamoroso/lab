@@ -1,0 +1,6 @@
+#!/bin/bash
+
+file="$1"
+
+[[ -z "$file" ]] && echo "Empty"
+[[ -n "$file" ]] && echo "Not empty"

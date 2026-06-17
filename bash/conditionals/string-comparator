@@ -1,0 +1,14 @@
+#!/bin/bash
+
+str1="$1"
+str2="$2"
+
+if [[ "$str1" == "$str2" ]]; then
+      echo "Equal"
+      exit 0
+fi
+
+if [[ "$str1" != "$str2" ]]; then
+	echo "Not equal"
+	exit 0
+fi
