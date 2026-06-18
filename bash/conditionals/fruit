@@ -1,0 +1,23 @@
+#!/bin/bash
+
+if [[ -z "$1" ]]; then
+	echo "=== Argument no provided ==="
+	echo "Usage: $0 <fruits>" >&2
+	exit 1
+fi
+
+case "$1" in
+	apple)
+		echo "the $1 is red"
+		;;
+	banana)
+		echo "the $1 is yellow"
+		;;
+	kiwi)
+		echo "the $1 is green"
+		;;
+	*)
+		echo "I don't know this fruit $1" >&2
+		exit 1
+		;;
+esac
