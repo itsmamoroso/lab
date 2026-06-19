@@ -1,0 +1,12 @@
+#!/bin/bash
+
+is_even() {
+	local num="$1"
+	(( num % 2 == 0 ))
+}
+
+if is_even "$1"; then
+	echo "$1 is even"
+else
+	echo "$1 is odd"
+fi
