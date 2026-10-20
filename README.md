@@ -1,9 +1,14 @@
 # lab
 This repo is a collection of the things I'm learning on a practical perspective, little projects, scripts, try and error, etc..
 
-I will push a collection of small challenges with the follow through process documenting the next steps.
+# Table of Content
+
+| Folder | Content |
+| Linux | Scripts for my personal use, files.md with the challenges I recorded |
+
+I will gather a collection of small challenges with the following thought process documenting the next steps.
 
 - Task to complete (a description of the challenge).
-- Steps followed for the task.
+- Steps followed for the task completion.
 - Challenges I overcame throughout the task.
 - Expected result of the task.
