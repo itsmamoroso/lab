@@ -27,3 +27,5 @@ cat /etc/passwd | grep -i <user-name>
 ```bash
 sudo userdel -r <user-name>
 ```
+
+#admin #security #linux
