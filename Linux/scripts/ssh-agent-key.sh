@@ -1,6 +1,7 @@
 #!/bin/bash
 # small script that will start automatically a new ssh-agent everytime I connect to the server if there is no a agent running.
-# or it will delete any hangin session and create a new one when I connect to the server. 
+# or it will delete any hangin session and create a new one when I connect to the server.
+# WARNING: if you don't source it the ENV variables will not be populated, I added to .bashrc for convinience.
 
 # collect the pid of the agent and the key to add
 pids=$(pgrep -u "$USER" -x ssh-agent)
