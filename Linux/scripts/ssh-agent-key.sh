@@ -4,7 +4,8 @@
 # WARNING: if you don't source it the ENV variables will not be populated, I added to .bashrc for convinience.
 
 # collect the pid of the agent and the key to add
-pids=$(pgrep -u "$USER" -x ssh-agent)
+pids=$(pgrep -u "${USER}" -x ssh-agent)
+devpod_socket=$(pgrep -af devpod)
 key=~/.ssh/thor
 
 # repeated code added to a function for further reuse
@@ -16,19 +17,23 @@ function ssh-call() {
 
 # logic behind the script is a case construct with two cases
 # an empty list or a list with elements with the catch all *
-case "$pids" in
-	"")
-		ssh-call "$key"
-		;;
-	*)
-		for pid in $pids; do
-			kill "$pid"
-			pids=$(pgrep -u "$USER" -x ssh-agent)
-			if [[ -z ${pids} ]]; then
-				ssh-call "$key"
-			fi
-		done
-		;;
+case "${pids}" in
+  "")
+    ssh-call "${key}"
+      ;;
+  *)
+    if [[ -n "${devpod_socket}" ]] ; then
+      :
+    else
+      for pid in ${pids}; do
+        kill "${pid}"
+	pids=$(pgrep -u "${USER}" -x ssh-agent)
+	if [[ -z "${pids}" ]] ; then
+          ssh-call "${key}"		
+        fi
+      done
+    fi
+    ;;
 esac
 
 
