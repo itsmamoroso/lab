@@ -23,7 +23,7 @@ case "${pids}" in
       ;;
   *)
     if [[ -n "${devpod_socket}" ]] ; then
-      :
+      ssh-call "${key}"
     else
       for pid in ${pids}; do
         kill "${pid}"
